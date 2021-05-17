@@ -1,0 +1,10 @@
+<launch>
+    <node
+        pkg="drone_controller"
+        type="drone"
+        name="drone_controller_node"
+        output="screen"
+        launch-prefix="xterm -e gdb -ex run --args">
+        
+    </node>
+</launch>

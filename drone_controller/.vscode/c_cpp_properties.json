@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/kjaebye/ws/devel/include/**",
+                "/opt/ros/kinetic/include/**",
+                "/home/kjaebye/ws/src/beginner_tutorials/include/**",
+                "/home/kjaebye/ws/src/dec_tag/include/**",
+                "/home/kjaebye/ws/src/drone_controller/include/**",
+                "/home/kjaebye/ws/src/image_learning/include/**",
+                "/home/kjaebye/ws/src/mavros/libmavconn/include/**",
+                "/home/kjaebye/ws/src/mav_msgs/include/**",
+                "/home/kjaebye/ws/src/mavros/mavros/include/**",
+                "/home/kjaebye/ws/src/mavros/mavros_msgs/include/**",
+                "/home/kjaebye/ws/src/planning_msgs/include/**",
+                "/home/kjaebye/ws/src/ros_opencv_test/include/**",
+                "/home/kjaebye/ws/src/service_client_pkg/include/**",
+                "/home/kjaebye/ws/src/service_server_pkg/include/**",
+                "/home/kjaebye/ws/src/sim_ros_interface/include/**",
+                "/home/kjaebye/ws/src/mavros/test_mavros/include/**",
+                "/home/kjaebye/ws/src/topic_publisher_pkg/include/**",
+                "/home/kjaebye/ws/src/topic_subscriber_pkg/include/**",
+                "/home/kjaebye/ws/src/vacuum_control/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

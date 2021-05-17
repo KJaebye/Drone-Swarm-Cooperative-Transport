@@ -1,0 +1,8 @@
+<launch>
+    <node
+        pkg="drone_controller"
+        type="bacterium_cmd_generator"
+        name="bacterium_cmd_generator_node"
+        output="screen">
+    </node>
+</launch>

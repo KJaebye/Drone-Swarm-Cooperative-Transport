@@ -1,0 +1,8 @@
+<launch>
+    <node
+        pkg="drone_controller"
+        type="vacuum_cmd_generator"
+        name="vacuum_cmd_generator_node"
+        output="screen">
+    </node>
+</launch>
