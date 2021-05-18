@@ -272,7 +272,11 @@ add_dependencies(nonuniform_cmd_generator ${nonuniform_cmd_generator_EXPORTED_TA
 target_link_libraries(nonuniform_cmd_generator 
   ${catkin_LIBRARIES}
 )
-
+add_executable(navigator_carrier_pose_generator src/navigator_carrier_pose_generator.cpp)
+add_dependencies(navigator_carrier_pose_generator ${navigator_carrier_pose_generator_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(navigator_carrier_pose_generator 
+  ${catkin_LIBRARIES}
+)
 #add_executable(suction_action src/suction.cpp)
 #add_dependencies(suction_action ${suction_action_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 

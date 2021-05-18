@@ -59,7 +59,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         left_time  = proximity_sensor.left_time;
         //ROS_INFO_STREAM(1);
-        activate = true;
+        // activate = true;
     }
     if(right_time != proximity_sensor.right_time)
     {
@@ -72,7 +72,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         right_time = proximity_sensor.right_time;
         //ROS_INFO_STREAM(2);
-        activate = true;
+        // activate = true;
     }
     if(front_time != proximity_sensor.front_time)
     {
@@ -85,7 +85,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         front_time = proximity_sensor.front_time;
         //ROS_INFO_STREAM(3);
-        activate = true;
+        // activate = true;
     }
     if(back_time != proximity_sensor.back_time)
     {
@@ -98,7 +98,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         back_time  = proximity_sensor.back_time;
         //ROS_INFO_STREAM(4);
-        activate = true;
+        // activate = true;
     }
 
     /*for(size_t i = 0; i < obs.size(); i++)
@@ -111,10 +111,10 @@ void ObstacleAvoidanceController::VelocityGenerator()
         ROS_INFO_STREAM("Obs "<<sensor_id<<": "<<obs[i][1]<<","<<obs[i][2]<<","<<obs[i][3]<<","<<obs[i][4]);
     }*/
 
-    if(activate)
-    {
-        //ROS_INFO_STREAM(endl<<"Time L,R,F,B:"<<endl<<left_time<<endl<<right_time<<endl<<front_time<<endl<<back_time);
-    }
+    // if(activate)
+    // {
+    //     ROS_INFO_STREAM(endl<<"Time L,R,F,B:"<<endl<<left_time<<endl<<right_time<<endl<<front_time<<endl<<back_time);
+    // }
 
     ///////// generate desired velocity for every proximity sensors ////////////////////////////////////////////////
     // by using FIRAS function: //////////////////////////////////////////////////////

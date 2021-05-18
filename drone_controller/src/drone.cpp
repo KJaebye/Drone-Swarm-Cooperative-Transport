@@ -45,9 +45,9 @@ void Drone::InitializeParams()
     bacterium_v[1] = 0;
     bacterium_v[2] = 0;
 
-    flocking_situation = false;
+    //flocking_situation = false;
     bacterium_situation = false;
-    //flocking_situation = true;
+    flocking_situation = true;
     //bacterium_situation = true;
 
     destination_situation = false;
@@ -461,7 +461,7 @@ void Drone::IMUCallback(const sensor_msgs::ImuConstPtr& imu_msg)
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "drone_controller_node");
-    int client_number = 6;
+    int client_number = 2;
     drone_control::Drone drones[client_number];
     if(client_number==1)
     {
