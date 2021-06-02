@@ -16,7 +16,7 @@ void FlockingController::InitializeParams()
     far_distance = 3;
 
     k_sep = 1.5;//1.5
-    k_coh = 1.2;//1.2
+    k_coh = 1.8;//1.2
     k_frict = 0.5;
     flocking_centroid[0]=0;
     flocking_centroid[1]=0;
