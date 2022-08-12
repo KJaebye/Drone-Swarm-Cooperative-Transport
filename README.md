@@ -167,7 +167,7 @@ git clone https://github.com/catkin/catkin_simple.git
 git clone https://github.com/PX4/mav_comm.git
 
 # download and put the package drone_controller into /src
-git clone 
+git clone https://github.com/KJaebye/Drone-Swarm-Cooperative-Transport.git
 ```
 do 'catkin build' at /catkin_ws
 ```
