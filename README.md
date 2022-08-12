@@ -205,6 +205,7 @@ In order to build the packages, navigate to the catkin_ws folder and type:
 export COPPELIASIM_ROOT_DIR=~/path/to/coppeliaSim/folder
 catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
+Build this package can generate a library named libsimExtROS.so, located at ~/catkin_ws/devel/lib/. Copy this file and replace the file of the same name at CoppeliaSim root directory. This library is the communication interface between CoppeliaSim and ROS.
 
 ### 3.3 Check ROS plugin is loaded
 **Note:
