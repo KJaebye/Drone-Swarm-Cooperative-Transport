@@ -166,7 +166,7 @@ git clone https://github.com/ethz-asl/glog_catkin.git
 git clone https://github.com/catkin/catkin_simple.git
 git clone https://github.com/PX4/mav_comm.git
 
-# download and put package drone_controller into /src
+# download and put the package drone_controller into /src
 git clone 
 ```
 do 'catkin build' at /catkin_ws
@@ -219,4 +219,14 @@ Then in another terminal open the CoppeliaSim. In logging text we should find:
 [CoppeliaSim:loadinfo]   plugin 'ROS': load succeeded.
 ```
 
-# Run the Code
+# Citation
+We are glad to share our ideas with you! Fork or use this work please use this citation:
+@article{huang2021decentralised,
+  title={Decentralised aerial swarm for adaptive and energy efficient transport of unknown loads},
+  author={Huang, Kangyao and Chen, Jingyu and Oyekan, John},
+  journal={Swarm and Evolutionary Computation},
+  volume={67},
+  pages={100957},
+  year={2021},
+  publisher={Elsevier}
+}
