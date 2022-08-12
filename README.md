@@ -1,9 +1,12 @@
 # Introduction
 It is the github repo for the paper: Decentralised aerial swarm for adaptive and energy efficient transport of unknown loads. https://doi.org/10.1016/j.swevo.2021.100957
 
+![alt](./pic/lift.png)
+
 Cooperative transport by a swarm of Quadcopters offers more flexibility and performance when carrying loads that are complex in structural profile and mass. Ensuring that team members of the swarm are optimally placed on these loads as well as able to resist disturbances from the environment during transport are current research challenges. In this paper, we present a decentralized behaviour based subsumption architecture for enabling a swarm of Quadcopters to explore an unfamiliar area, find a load and transport it to a target location cooperatively. In the architecture, three behaviours were used: an obstacle avoidance behaviour to avoid collisions with objects in the environment, a flocking behaviour to ensure swarm structure and a bacterium behaviour for exploration of the environment and to adapt to the mass profile of various detected loads.
 
 By adapting to the mass profile of a detected load, we show that our architecture ensures even energy distribution among Quadcopters while achieving robustness to disturbances from the environment. Our results show that a mass adapting swarm is able to conserve energy during payload transportation when compared to a swarm that does not adapt to a load’s profile. Furthermore, we do not use explicit communication between team members but instead rely on data from visual sensors attached to the Quadcopters. We experiment with simulations in a physics informed robot simulator called CoppeliaSim and demonstrate the effectiveness of our architecture when utilized for cooperative transport of irregular loads.
+
 
 # Environment Configuration
 ## 1. Set up ROS Noetic
