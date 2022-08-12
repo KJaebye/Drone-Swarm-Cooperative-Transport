@@ -1,0 +1,8 @@
+<launch>
+    <node
+        pkg="drone_controller"
+        type="flocking_cmd_generator"
+        name="flocking_cmd_generator_node"
+        output="screen">
+    </node>
+</launch>

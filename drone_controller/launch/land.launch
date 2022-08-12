@@ -1,0 +1,8 @@
+<launch>
+    <node
+        pkg="drone_controller"
+        type="land_wp_planning"
+        name="land_wp_planning_node"
+        output="screen">
+    </node>
+</launch>
