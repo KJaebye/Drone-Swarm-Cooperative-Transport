@@ -58,7 +58,7 @@ void VacuumCommandGenerator::Publish()
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "vacuum_cmd_generator_node");
-    int client_number = 6;
+    int client_number = 3;
     drone_control::VacuumCommandGenerator vaccum_cmd_generators[client_number];
     if(client_number==1)
     {

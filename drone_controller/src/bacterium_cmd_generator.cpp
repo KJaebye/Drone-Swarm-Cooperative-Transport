@@ -57,7 +57,7 @@ BacteriumCommandGenerator::~BacteriumCommandGenerator(){}
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "bacterium_cmd_generator_node");
-    int client_number = 6;
+    int client_number = 3;
     drone_control::BacteriumCommandGenerator bacterium_cmd_generators[client_number];
     if(client_number==1)
     {

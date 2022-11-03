@@ -45,13 +45,11 @@ void Drone::InitializeParams()
     bacterium_v[1] = 0;
     bacterium_v[2] = 0;
 
-    //flocking_situation = false;
-    bacterium_situation = false;
     flocking_situation = true;
-    //bacterium_situation = true;
+    bacterium_situation = true;
 
-    destination_situation = false;
-    liftland_situation = false;
+    // destination_situation = false;
+    // liftland_situation = false;
 
     G_b = 0.5;// gain of bacterium
     G_f = 0.5;// gain of flocking
@@ -62,7 +60,7 @@ void Drone::InitializeParams()
     G_f = G_f * gain;
     G_f_t = G_f_t * gain;
 
-    destination_x = -1.8;//25
+    destination_x = 25;//25
     destination_y = 0;//0
 
     counter = 0;
@@ -366,8 +364,8 @@ void Drone::OdometryCallback(const nav_msgs::OdometryConstPtr& odometry_msg)
                 obstacle_avoidance_velocity = obstacle_avoidance_controller.GetVelocityCommand();
                 command_velocity_msg.velocity.x = obstacle_avoidance_velocity[0];// ignore vertical velocity
                 command_velocity_msg.velocity.y = obstacle_avoidance_velocity[1];
-                //ROS_INFO_STREAM("Avoidance speed:"
-                //    <<obstacle_avoidance_velocity[3]<<","<<obstacle_avoidance_velocity[0]<<","<<obstacle_avoidance_velocity[1]<<" #"<<drone_id);
+                ROS_INFO_STREAM("Avoidance speed:"
+                   <<obstacle_avoidance_velocity[3]<<","<<obstacle_avoidance_velocity[0]<<","<<obstacle_avoidance_velocity[1]<<" #"<<drone_id);
             }else
             {
                 if (bacterium_situation)
@@ -461,7 +459,7 @@ void Drone::IMUCallback(const sensor_msgs::ImuConstPtr& imu_msg)
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "drone_controller_node");
-    int client_number = 2;
+    int client_number = 3;
     drone_control::Drone drones[client_number];
     if(client_number==1)
     {

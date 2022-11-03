@@ -9,10 +9,10 @@ void ObstacleAvoidanceController::InitializeParams()
 {
     // initialize params for detection area
     max_detection_distance = 0.5 + 0.22; // 0.5 is the range and 0.22 is the radius
-    mu = 0.05;// for velocity method in FIRAS
-    //mu = 2;// for position method in FIRAS
+    // mu = 0.05;// for velocity method in FIRAS
+    mu = 2;// for position method in FIRAS
 
-    activate = false;
+    activate = true;
 
     v_left.resize(5);
     v_right.resize(5);
@@ -59,7 +59,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         left_time  = proximity_sensor.left_time;
         //ROS_INFO_STREAM(1);
-        // activate = true;
+        activate = true;
     }
     if(right_time != proximity_sensor.right_time)
     {
@@ -72,7 +72,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         right_time = proximity_sensor.right_time;
         //ROS_INFO_STREAM(2);
-        // activate = true;
+        activate = true;
     }
     if(front_time != proximity_sensor.front_time)
     {
@@ -85,7 +85,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         front_time = proximity_sensor.front_time;
         //ROS_INFO_STREAM(3);
-        // activate = true;
+        activate = true;
     }
     if(back_time != proximity_sensor.back_time)
     {
@@ -98,7 +98,7 @@ void ObstacleAvoidanceController::VelocityGenerator()
 
         back_time  = proximity_sensor.back_time;
         //ROS_INFO_STREAM(4);
-        // activate = true;
+        activate = true;
     }
 
     /*for(size_t i = 0; i < obs.size(); i++)

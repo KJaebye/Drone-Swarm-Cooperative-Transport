@@ -147,7 +147,7 @@ void LandWaypointPlanner::OdometryCallback(const nav_msgs::OdometryConstPtr& gps
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "land_wp_planning_node");
-    int client_number = 6;
+    int client_number = 3;
     drone_control::LandWaypointPlanner land_wp_planner[client_number];
     if(client_number==1)
     {
