@@ -222,6 +222,78 @@ Then in another terminal open the CoppeliaSim. In logging text we should find:
 [CoppeliaSim:loadinfo]   plugin 'ROS': load succeeded.
 ```
 
+# Usage
+I provide two simple examples to show how to use this repo. Please check two scenes in directory **/CoppeliaSim Models/my_scene**, named **simple_example_0.ttt** and **simple_example_1**.
+
+## simple_example_0.ttt
+This scene is the simplest scenario in this repo for quick start, providing flocking behaviour, bacterium behaviour, and obstacle behaviour to drones in swarm. Function of behaviours can be found in my paper.
+
+Firstly, load **simple_example_0.ttt** in CoppeliaSim(VREP), and you can see three drones naming from "Quadricopter" to "Quadricopter#1".
+> Note: Do not change the drones'name in VREP since ROS topic names are based on these.
+
+Secondly, launch **swarm.launch** can create swarm controllers by C++, subscribers, and publishers, to remote control the drones in VREP:
+> It may cause a crash because every drone has a same initial destination.
+```
+roslaunch drone_controller swarm.launch
+```
+
+Thirdly, launch **flocking_cmd_generator.launch** which can generate flocking behabiour between drones:
+> In practice, this node should be launched first to avoid a crash at the begining.
+```
+roslaunch drone_controller flocking_cmd_generator.launch
+```
+After this, start the simulation in VREP.
+
+Finally, launch **bacterium_cmd_generator.launch** can generate random walking behaviour to drones:
+```
+roslaunch drone_controller bacterium_cmd_generator.launch
+```
+
+## simple_example_1.ttt
+This example is for transporting an object (the pink one) to the destination.
+
+Firstly, launch **swarm.launch**, **bacterium_flocking.launch** to fly the swarm:
+```
+roslaunch drone_controller swarm.launch
+roslaunch drone_controller bacterium_flocking.launch
+```
+Then, start the simulation in VREP.
+
+Secondly, launch **bacterium_cmd_generator.launch** can generate random walking behaviour to drones:
+```
+roslaunch drone_controller bacterium_cmd_generator.launch
+```
+
+Thirdly, after the swarm has converged on the object, run **lift.launch** allowing swarm to land and capture the object by suckers:
+```
+roslaunch drone_controller lift.launch
+```
+
+Finally, launch **destination_cmd_generator.launch** to make swarm move to the end:
+```
+roslaunch drone_controller destination_cmd_generator.launch
+```
+After the object is transported to the end, run **land.launch** to release:
+```
+roslaunch drone_controller land.launch
+```
+
+# Important Parameters
+There are several parameters in this project:
+## ./drone.cpp
+- flocking_situation: default==true, set to **true** denotes the swarm always performs flocking behaviour; otherwise, only run **flocking_cmd_generator.cpp** can generate flocking.
+- bacterium_situation: default==true, set to **true** denotes the swarm always performs searching behaviour; otherwise, only run **bacterium_cmd_generator.cpp** can generate random walking.
+- G_b, G_f, G_f_t, gain: parameters for behaviours.
+- destination_x, destination_y: destination location.
+## ./control_utility/flocking.cpp
+- k_sep, k_coh, k_frict, speed_max: parameters for flocking.
+- level: swarm's height when flocking.
+## ./control_utility/random_velocity_flying.cpp
+- field_x_min, field_x_max, field_y_min, field_y_max: set boundary for the swarm.
+- T, T0, threshold_value, Tm, alpha, kd, dP_dt, dC_dt, dP_dt_weight, current_concentration, previous_concentration: described in the paper.
+
+> Note: Every drone should have the unique publisher and subscriber and topic. If change the number of swarm, remember to change the paramter ***client_number*** in main function in every .cpp file to generate correct names.
+
 # Citation
 We are glad to share our ideas with you! Fork or use this work please use this citation:
 @article{huang2021decentralised,
