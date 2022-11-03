@@ -223,7 +223,7 @@ Then in another terminal open the CoppeliaSim. In logging text we should find:
 ```
 
 # Usage
-I provide two simple examples to show how to use this repo. Please check two scenes in directory **/CoppeliaSim Models/my_scene**, named **simple_example_0.ttt** and **simple_example_1**.
+I provide two simple examples to show how to use this repo. Please check two scenes in directory **/CoppeliaSim Models/my_scene**, named **simple_example_0.ttt** and **simple_example_1.ttt**.
 
 ## simple_example_0.ttt
 This scene is the simplest scenario in this repo for quick start, providing flocking behaviour, bacterium behaviour, and obstacle behaviour to drones in swarm. Function of behaviours can be found in my paper.
