@@ -1,5 +1,5 @@
 # Introduction
-It is the github repo for the paper: Decentralised aerial swarm for adaptive and energy efficient transport of unknown loads. https://doi.org/10.1016/j.swevo.2021.100957
+Implementation for the paper: Decentralised aerial swarm for adaptive and energy efficient transport of unknown loads. https://doi.org/10.1016/j.swevo.2021.100957
 
 ![alt](./pic/lift.png)
 
@@ -295,7 +295,7 @@ There are several parameters in this project:
 > Note: Every drone should have the unique publisher and subscriber and topic. If change the number of swarm, remember to change the paramter ***client_number*** in main function in every .cpp file to generate correct names.
 
 # Citation
-We are glad to share our ideas with you! Fork or use this work please use this citation:
+```
 @article{huang2021decentralised,
   title={Decentralised aerial swarm for adaptive and energy efficient transport of unknown loads},
   author={Huang, Kangyao and Chen, Jingyu and Oyekan, John},
@@ -305,3 +305,4 @@ We are glad to share our ideas with you! Fork or use this work please use this c
   year={2021},
   publisher={Elsevier}
 }
+```
